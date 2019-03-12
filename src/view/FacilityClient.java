@@ -32,9 +32,10 @@ public class FacilityClient{
 		group.setFacilityID(1);
 		group.setGroupName("Information Commons");
 		group.setGroupOwner("Michael");
-		
-//		Adding building1 to FacilityGroup
-		Building building1 = new Building();
+
+		/**********************************************************************/
+		//Bootstrapping the Building instantiation using factory
+		Building building1 = (Building) context.getBean("building");
 		building1.setFacilityID(2);
 		building1.setBuildingName("Corboy Law Center");
 		building1.setBuildingOwner("Mary");
