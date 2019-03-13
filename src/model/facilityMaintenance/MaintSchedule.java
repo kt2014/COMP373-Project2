@@ -11,7 +11,11 @@ public class MaintSchedule {
     	setDateScheduled(date);
     	setService(new MaintService());
     }
-    
+
+	public MaintSchedule() {
+
+	}
+
 	public int getScheduleID() {
 		return scheduleID;
 	}

@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
     <description>Wiring the dependencies for the Facility Management System Application.</description>
+
+    <context:component-scan base-package="view" />
+
+    <bean id="building" class="model.facility.Building" scope="prototype"/>
+    <bean id="room" class="model.facility.Unit" scope="prototype"/>
+
+    <bean id="roomAddress" class="model.facility.Address"
+          scope="prototype"/>
+    <bean id="manager" class="model.facility.Manager"
+          scope="prototype"/>
+
+    <bean id="request" class="model.facilityMaintenance.MaintRequest" scope="prototype"/>
+    <bean id="schedule" class="model.facilityMaintenance.MaintSchedule" scope="prototype">
+    </bean>
+
+    <bean id="usage" class="model.facilityUse.Usage" scope="prototype"/>
+    <bean id="user" class="model.facilityUse.User" scope="prototype"/>
+    <bean id="inspection" class="model.inspection.Inspection" scope="prototype">
+    </bean>
+
+
 
 </beans>

@@ -43,14 +43,15 @@ public class FacilityClient{
 		
 		group.addNewFacility(building1);
 		
-//		Adding room1 to building 1
-		Unit room1 = new Unit();
+//		Unit contains room details
+        Unit room1 = (Unit) context.getBean("room");
 		room1.setFacilityID(20);
 		room1.setRoomName("Conference Unit");
 		room1.setRoomOwner("Karina");
 		room1.setUsageType("Business");
 		
-		Address room1Address = new Address();
+		// Address contains room address details
+        Address room1Address = (Address) context.getBean("roomAddress");
 		room1Address.setAddressID(1);
 		room1Address.setUnitNumber(22);
 		room1Address.setStreetNumber(25);
@@ -60,8 +61,9 @@ public class FacilityClient{
 		room1Address.setZipCode(60611);
 		
 		room1.setAddress(room1Address);
-		
-		Manager manager1 = new Manager();
+
+		// Manager contains manager details
+		Manager manager1 = (Manager) context.getBean("manager");
 		manager1.setManagerID(3344);
 	    manager1.setFirstName("George");
 		manager1.setLastName("Simon");
@@ -71,9 +73,9 @@ public class FacilityClient{
 		room1.setManager(manager1);
 		building1.addNewFacility(room1);
 		
-//		Adding building2 to FacilityGroup		
-		Building building2 = new Building();
-		building2.setFacilityID(11);
+//		Second building
+        Building building2 = (Building) context.getBean("building");
+        building2.setFacilityID(11);
 		building2.setBuildingName("Baumhart Hall");
 		building2.setBuildingOwner("Sandy");
 		building2.setConstructionDate(date2);
@@ -81,13 +83,13 @@ public class FacilityClient{
 		group.addNewFacility(building2);
 		
 //		Adding room 2 to building 2
-		Unit room2 = new Unit();
+        Unit room2 = (Unit) context.getBean("room");
 		room2.setFacilityID(2);
 		room2.setRoomName("Library");
 		room2.setRoomOwner("Mike");
 		room2.setUsageType("Business");
-		
-		Address room2Address = new Address();
+
+        Address room2Address = (Address) context.getBean("roomAddress");
 		room2Address.setAddressID(2);
 		room2Address.setUnitNumber(2);
 		room2Address.setStreetNumber(44);
@@ -96,9 +98,9 @@ public class FacilityClient{
 		room2Address.setStateProvince("Illinois");
 		room2Address.setZipCode(60003);
 		
-		room2.setAddress(room2Address);	
-		
-		Manager manager2 = new Manager();
+		room2.setAddress(room2Address);
+
+        Manager manager2 = (Manager) context.getBean("manager");
 		manager2.setManagerID(456);
 	    manager2.setFirstName("Gary");
 		manager2.setLastName("Becker");
@@ -110,13 +112,13 @@ public class FacilityClient{
 		building2.addNewFacility(room2);
 		
 //		Adding room 3 to building 2
-		Unit room3 = new Unit();
+        Unit room3 = (Unit) context.getBean("room");
 		room3.setFacilityID(3);
 		room3.setRoomName("Cafe");
 		room3.setRoomOwner("Katrin");
 		room3.setUsageType("Business");
-		
-		Address room3Address = new Address();
+
+        Address room3Address = (Address) context.getBean("roomAddress");
 		room3Address.setAddressID(3);
 		room3Address.setUnitNumber(3);
 		room3Address.setStreetNumber(300);
@@ -126,8 +128,8 @@ public class FacilityClient{
 		room3Address.setZipCode(60610);
 		
 		room3.setAddress(room3Address);
-		
-		Manager manager3 = new Manager();
+
+        Manager manager3 = (Manager) context.getBean("manager");
 		manager3.setManagerID(789);
 	    manager3.setFirstName("Mery");
 		manager3.setLastName("Stewart");
@@ -138,7 +140,7 @@ public class FacilityClient{
 //		Facility Maintenance
 //		New maintenance request created; scheduled, serviced and cost assigned 
 //	    MaintRequest 1
-		MaintRequest request1 = new MaintRequest();
+		MaintRequest request1 = (MaintRequest) context.getBean("request");
 	    request1.setRequestID(1004);
 	    request1.setDateRequested(date1);
 	    request1.setTextDescription("Broken Windows");
@@ -149,8 +151,8 @@ public class FacilityClient{
 	    maintenance1.setPriority(true);
 	    maintenance1.setStatus("Pending");
 	    maintenance1.setMaintenanceType("Fixtures");
-	   
-	    MaintSchedule schedule1 = new MaintSchedule(date1);
+
+	    MaintSchedule schedule1 = (MaintSchedule) context.getBean("schedule");
 	    schedule1.setScheduleID(2);
 	    schedule1.setDateScheduled(date1);
 	   
@@ -168,8 +170,8 @@ public class FacilityClient{
 	   
 	   
 //      Second request
-	    MaintRequest request2 = new MaintRequest();
-	    request2.setRequestID(3001);
+        MaintRequest request2 = (MaintRequest) context.getBean("request");
+        request2.setRequestID(3001);
 	    request2.setDateRequested(date2);
 	    request2.setTextDescription("There is broken window");
 	   
@@ -179,8 +181,8 @@ public class FacilityClient{
 	    maintenance2.setPriority(true);
 	    maintenance2.setStatus("Pending");
 	    maintenance2.setMaintenanceType("Glass");
-	   	     
-	    MaintSchedule schedule2 = new MaintSchedule(date2);
+
+        MaintSchedule schedule2 = (MaintSchedule) context.getBean("schedule");
 	    schedule2.setScheduleID(22);
 	    schedule2.setDateScheduled(date2);
 	   
@@ -199,13 +201,13 @@ public class FacilityClient{
 	    
 //	    Facility Use
 //	    Usage, user 1
-	    Usage usage1 = new Usage();
+	    Usage usage1 = (Usage) context.getBean("usage");
 	    usage1.setUsageID(400);
 	    usage1.setUsageType("Business Property");
 	    usage1.setStartDate(date1);
 	    usage1.setEndDate(date2);
-	   
-	    User user1 = new User();
+
+	    User user1 = (User) context.getBean("user");
 	    user1.setUserID(1);
 	    user1.setFirstName("Gloria");
 	    user1.setLastName("Fernandes");
@@ -214,13 +216,13 @@ public class FacilityClient{
 	    usage1.setUser(user1);
 	    
 //	    Usage, user 2
-	    Usage usage2 = new Usage();
-	    usage2.setUsageID(500);
+        Usage usage2 = (Usage) context.getBean("usage");
+        usage2.setUsageID(500);
 	    usage2.setUsageType("Residential Property");
 	    usage2.setStartDate(date1);
 	    usage2.setEndDate(date2);
-	   
-	    User user2 = new User();
+
+        User user2 = (User) context.getBean("user");
 	    user2.setUserID(2);
 	    user2.setFirstName("Maili");
 	    user2.setLastName("Williams");
@@ -229,7 +231,7 @@ public class FacilityClient{
 	    usage2.setUser(user2);
 	   
 //	    Inspection 1
-	    Inspection inspection1 = new Inspection();
+        Inspection inspection1 = (Inspection) context.getBean("inspection");
 	    inspection1.setInspectionID(52);
 	    inspection1.setInspectionType("Annual check");
 	    inspection1.setInspector("Kaily");
@@ -237,8 +239,8 @@ public class FacilityClient{
 	    inspection1.setOutcome("All looks good");
 	   
 //	    Inspection 2 
-	    Inspection inspection2 = new Inspection();
-	    inspection2.setInspectionID(85);
+        Inspection inspection2 = (Inspection) context.getBean("inspection");
+        inspection2.setInspectionID(85);
 	    inspection2.setInspectionType("Monthly check");
 	    inspection2.setInspector("Sandra");
 	    inspection2.setInspectionDate(date2);
