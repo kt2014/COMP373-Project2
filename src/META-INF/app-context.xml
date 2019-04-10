@@ -12,20 +12,25 @@
     <context:component-scan base-package="view" />
 
     <bean id="building" class="model.facility.Building" scope="prototype"/>
+    	<constructor-arg name="buildingID" value=""/>
     <bean id="room" class="model.facility.Unit" scope="prototype"/>
-
-    <bean id="roomAddress" class="model.facility.Address"
-          scope="prototype"/>
-    <bean id="manager" class="model.facility.Manager"
-          scope="prototype"/>
-
+		<constructor-arg name="roomID" value=""/>
+    <bean id="roomAddress" class="model.facility.Address" scope="prototype"/>
+    	<constructor-arg name="addressID" value=""/>
+    <bean id="manager" class="model.facility.Manager"scope="prototype"/>
+		<constructor-arg name="managerID" value=""/>
     <bean id="request" class="model.facilityMaintenance.MaintRequest" scope="prototype"/>
+    	<constructor-arg name="requestID" value=""/>
     <bean id="schedule" class="model.facilityMaintenance.MaintSchedule" scope="prototype">
+    	<constructor-arg name="scheduleID" value=""/>
     </bean>
 
     <bean id="usage" class="model.facilityUse.Usage" scope="prototype"/>
+    	<constructor-arg name="usageID" value=""/>
     <bean id="user" class="model.facilityUse.User" scope="prototype"/>
+    	<constructor-arg name="userID" value=""/>
     <bean id="inspection" class="model.inspection.Inspection" scope="prototype">
+    	<constructor-arg name="inspectionID" value=""/>
     </bean>
 
 
