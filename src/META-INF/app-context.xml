@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
+<bean xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
 
     <description>Wiring the dependencies for the Facility Management System Application.</description>
 
     <context:component-scan base-package="view" />
-
+    <!--
     <bean id="building" class="model.facility.Building" scope="prototype"/>
     	<constructor-arg name="buildingID" value=""/>
     <bean id="room" class="model.facility.Unit" scope="prototype"/>
@@ -24,15 +24,26 @@
     <bean id="schedule" class="model.facilityMaintenance.MaintSchedule" scope="prototype">
     	<constructor-arg name="scheduleID" value=""/>
     </bean>
-
     <bean id="usage" class="model.facilityUse.Usage" scope="prototype"/>
     	<constructor-arg name="usageID" value=""/>
-    <bean id="user" class="model.facilityUse.User" scope="prototype"/>
-    	<constructor-arg name="userID" value=""/>
+    -->
+    <!--INSPECTION-->
+    <bean id="inspectionabstract" class="model.inspection.InspectionAbstract" scope="prototype"/>
+
     <bean id="inspection" class="model.inspection.Inspection" scope="prototype">
-    	<constructor-arg name="inspectionID" value=""/>
+        <constructor-arg name="inspection" value=""/>
     </bean>
+    <!--USER-->
+    <bean id="userabstract" class="model.facilityUse.UserAbstract" scope="prototype"/>
+
+    <bean id="user" class="model.facilityUse.User" scope="prototype"/>
+        <constructor-arg name="user" value=""/>
+    </bean>
+    <!--Maintenance-->
+    <bean id="maintenanceAbstract" class="model.facilityMaintenance.MaintenanceAbstract" scope="prototype"/>
 
 
 
 </beans>
+
+

@@ -1,42 +1,42 @@
 package model.inspection;
-
 import java.util.Date;
 
-public class Inspection {
-    private int inspectionID;
-    private String inspectionType;
-    private Date inspectionDate;
-    private String inspector;
-    private String outcome;
-    
-	public int getInspectionID() {
-		return inspectionID;
+public class Inspection extends InspectionAbstract{
+	public Inspection(InspectionInterface inspection){
+		super(inspection);
 	}
-	public void setInspectionID(int inspectionID) {
-		this.inspectionID = inspectionID;
+	public int getInspectionID(){
+		return getInspectionID();
 	}
+	public void setInspectionID(int inspectionID){
+		setInspectionID(inspectionID);
+	}
+
 	public String getInspectionType() {
-		return inspectionType;
+		return getInspectionType();
 	}
 	public void setInspectionType(String inspectionType) {
-		this.inspectionType = inspectionType;
+		setInspectionType(inspectionType);
 	}
+
 	public Date getInspectionDate() {
-		return inspectionDate;
+		return getInspectionDate();
 	}
 	public void setInspectionDate(Date inspectionDate) {
-		this.inspectionDate = inspectionDate;
+		setInspectionDate(inspectionDate);
 	}
+
 	public String getInspector() {
-		return inspector;
+		return getInspector();
 	}
 	public void setInspector(String inspector) {
-		this.inspector = inspector;
+		setInspector(inspector);
 	}
-	public String getOutcome() {
-		return outcome;
+
+	public String getInspectionOutcome() {
+		return getInspectionOutcome();
 	}
-	public void setOutcome(String outcome) {
-		this.outcome = outcome;
+	public void setInspectionOutcome(String inspectionOutcome) {
+		setInspectionOutcome(inspectionOutcome);
 	}
 }
